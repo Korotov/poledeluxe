@@ -1,0 +1,177 @@
+.l-header{
+  background:transparent url('../img/bg_top.jpg') center top no-repeat;
+  background-size: auto 100%;
+  @include to($md){
+    background-size: cover;
+      }
+}
+.header {
+  @include row-flex();
+  @include wrapper();
+  justify-content: space-between;
+  padding-top: 19px;
+  padding-bottom: 19px;
+   @include to($sm){
+        padding-top: 12px;
+        padding-bottom: 11px;
+      }
+  &__line {
+    @extend .line;
+    @include to($sm) {
+      margin-right: 81px;
+    }
+  }
+}
+.logo {
+  @include col();
+  @include size(4);
+  @include to($sm) {
+    padding-bottom: 8px;
+  }
+    &__img {
+      @include to($sm){
+        width: 201px;
+
+      }
+    }
+}
+.infolist{
+  @include to($md) {
+    display: none;
+  }
+  @include col();
+  @include row-flex();
+  @include size(8);
+  align-items: start;
+}
+.infoblock{
+  @include col();
+  @include size(4);
+  display: flex;
+  align-items: flex-start;
+  font-family: Roboto;
+  min-height: 58px;
+  line-height: 1.5;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: left;
+  color: #ffffff;
+  border-left: solid 1px #4a4a4a;
+  padding-left: 1.2rem;
+  &:first-child {
+    border: none;
+    padding-left: 0;
+  }
+  &__img {
+    width: 18px;
+    height: auto;
+    margin-right: 8px;
+  }
+  &__title {
+    font-weight: bold;
+  }
+  &__desc {
+    margin:0;
+  }
+}
+//menu
+.navbar {
+  @include wrapper();
+  display: flex;
+  justify-content: space-between;
+  @include to($sm){
+      display: none;
+      }
+
+}
+.mainmenu {
+  @include to($sm) {
+    display: none;
+  }
+  display: flex;
+  padding-left: 0;
+  flex: 10;
+  list-style-type: none;
+  &__item {
+
+  }
+  &__link {
+    display: block;
+    margin-right: .2em;
+    padding: .6em .4em;
+    text-decoration: none;
+    color: white;
+    @include bounce-to-top();
+    &:hover, &:focus {
+
+    }
+  }
+  &__text {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}
+.social {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  list-style-type: none;
+  &_big {
+    flex: initial;
+  }
+  &__item {
+
+  }
+  &__link {
+    display: block;
+    margin-right: 1rem;
+    text-decoration: none;
+    @include float-shadow();
+
+    &_big {
+      width: 70px;
+      margin-right: 70px;
+    }
+  }
+  &__icon {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+//Расписание на сегодня
+.raspisanie-btn {
+  display: block;
+  margin: 0 auto;
+  background: none;
+  border: none;
+  outline: none;
+  padding-bottom: .4em;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+  @include underline-from-center();
+  @include from($sm) {
+    display: none;
+  }
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    img {
+      width: 30px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  &__text{
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,55 @@
+// List Groups
+
+@mixin list-group-item-variant($state, $background, $color) {
+  .list-group-item-#{$state} {
+    color: $color;
+    background-color: $background;
+
+    // [converter] extracted a&, button& to a.list-group-item-#{$state}, button.list-group-item-#{$state}
+  }
+
+  a.list-group-item-#{$state},
+  button.list-group-item-#{$state} {
+    color: $color;
+
+    .list-group-item-heading {
+      color: inherit;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color;
+      background-color: darken($background, 5%);
+    }
+    &.active,
+    &.active:hover,
+    &.active:focus {
+      color: #fff;
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+}
+%h-menu-link{
+  display: block;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .1em;
+  transition: all .3s;
+}
+%v-menu-link{
+  display: block;
+  padding: .25em 0;
+  outline: none;
+  text-align: left;
+  font-size: .9rem;
+  text-indent: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: .1em;
+  transition: all .2s;
+}

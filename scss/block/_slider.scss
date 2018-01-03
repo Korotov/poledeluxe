@@ -1,0 +1,72 @@
+.l-slider {
+  background: $color-dark;
+  @include from($md) {
+    background:transparent url('../img/slides/slide-3.jpg') center top no-repeat;
+  }
+  background-size: auto;
+}
+.slider {
+  @include row-flex();
+  @include wrapper();
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 39px 0;
+  min-height: 626px;
+  &__form {
+    @include size(4);
+    @include size-md(6);
+    @include size-sm(12);
+    @include to($sm) {
+      width: 100%;
+    }
+  }
+  &__desc {
+    @include size(5);
+    @include size-sm(12);
+    align-self: flex-end;
+  }
+  &__title {
+    color: $color-accent;
+    font-family: Roboto;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.08;
+    text-align: left;
+    @include to($sm) {
+      font-size: 25px;
+    }
+  }
+  &__desc{
+    font-family: Roboto;
+    color: $color-text-light;
+    strong {
+      font-size: 25px;
+      font-weight: 900;
+      text-align: left;
+      @include to($sm) {
+        font-size: 16px;
+      }
+    }
+  }
+  &__phone {
+    font-size: 45px;
+    font-weight: 300;
+    color: $color-accent;
+    @include to($sm) {
+      font-size: 32px;
+    }
+
+  }
+  &__text {
+    font-size: 16px;
+    text-align: left;
+    @include to($sm) {
+      font-size: 14px;
+    }
+  }
+}
+.f-try {
+  background-color: $color-text-dark;
+  padding: 40px 28px;
+  margin-top: 44px;
+}

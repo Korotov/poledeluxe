@@ -1,0 +1,68 @@
+/*!
+ * Hover.css (http://ianlunn.github.io/Hover/)
+ * Version: 2.2.1
+ * Author: Ian Lunn @IanLunn
+ * Author URL: http://ianlunn.co.uk/
+ * Github: https://github.com/IanLunn/Hover
+
+ * Hover.css Copyright Ian Lunn 2017. Generated with Sass.
+ */
+
+@import "options";
+@import "mixins";
+@import "hacks";
+
+
+@import "effects/2d-transitions/pop";
+@if $includeClasses {
+  .#{$nameSpace}-pop {
+    @include pop();
+  }
+}
+
+@import "effects/2d-transitions/pulse-shrink";
+@if $includeClasses {
+  .#{$nameSpace}-pulse-shrink {
+    @include pulse-shrink();
+  }
+}
+@import "effects/background-transitions/bounce-to-top";
+@if $includeClasses {
+  .#{$nameSpace}-bounce-to-top {
+    @include bounce-to-top();
+  }
+}
+@import "effects/border-transitions/underline-from-center";
+@if $includeClasses {
+  .#{$nameSpace}-underline-from-center {
+    @include underline-from-center();
+  }
+}
+@import "effects/border-transitions/ripple-out";
+@if $includeClasses {
+  .#{$nameSpace}-ripple-out {
+    @include ripple-out();
+  }
+}
+
+/* SHADOW/GLOW TRANSITIONS */
+@import "effects/shadow-and-glow-transitions/glow";
+@if $includeClasses {
+  .#{$nameSpace}-glow {
+    @include glow();
+  }
+}
+
+@import "effects/shadow-and-glow-transitions/grow-shadow";
+@if $includeClasses {
+  .#{$nameSpace}-grow-shadow {
+    @include grow-shadow();
+  }
+}
+
+@import "effects/shadow-and-glow-transitions/float-shadow";
+@if $includeClasses {
+  .#{$nameSpace}-float-shadow {
+    @include float-shadow();
+  }
+}

@@ -1,0 +1,99 @@
+.l-styles{
+  background-image: linear-gradient(to bottom, #d8d8d8, #1e1e1e);
+  @include from($md){
+    background:transparent url('../img/back.jpg') center top no-repeat;
+  }
+  background-size: cover;
+}
+.styles {
+  @include row-flex();
+  @include wrapper();
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 62px 0;
+  &__list {
+    @include row-flex();
+    @include wrapper();
+    justify-content: space-around;
+    padding-bottom: 4rem;
+  }
+  &__title {
+  padding-bottom: 1em;
+  font-family: Roboto Condensed;
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $color-text-dark;
+  }
+}
+.t-style {
+  @include size(4);
+  @include size-md(6);
+  @include size-sm(12);
+  justify-content: space-between;
+  display: flex;
+  height: auto;
+  align-items: stretch;
+  flex-direction: column;
+  font-family: Roboto Condensed;
+  text-align: center;
+  padding: 0;
+  @include to($sm){
+    &:not(:first-of-type){
+      display: none;
+    }
+  }
+  &__img {
+    display: block;
+    margin: 0;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  &__header {
+    width: 100%;
+    padding: 8px 0 15px;
+    background-color: $color-text-dark;
+    color: $color-accent;
+  }
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 30px;
+  }
+  &__subtitle {
+    font-size: 20px;
+  }
+  &__schedule {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 12px;
+    padding: 21px 32px;
+
+    background-color: #fff;
+    color: $color-text-dark;
+  }
+  &__table {
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__icon {
+    width: 16px;
+    height: auto;
+  }
+  &__col1 {
+    font-weight: 500;
+    padding: .3em 1em;
+  }
+  &__col3 {
+    color: #9b9b9b;
+  }
+}
+.btn_allstyles {
+  @extend .btn;
+  font-size: 20px;
+  padding: .9em 2em;
+}

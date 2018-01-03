@@ -1,0 +1,41 @@
+.l-aboutus {
+  background-color: $color-dark;
+  @include from($md){
+    background:transparent url('../img/bg_about.jpg') center top no-repeat;
+  }
+  background-size: auto 100%;
+}
+.aboutus {
+  @include row-flex();
+  @include wrapper();
+  padding: 6rem 0 4rem 0;
+  flex-direction: row-reverse;
+  &__block {
+    @include size(5);
+    @include size-sm(12);
+  }
+  &__img {
+    width: 379px;
+    max-width: 100%;
+    height: auto;
+
+  }
+  &__title {
+    font-size: 31px;
+    font-family: "PF Square Sans Pro", sans-serif;
+  }
+  &__desc {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2rem;
+    line-height: 1.35;
+  }
+  &__btn {
+    @extend .btn;
+    font-size: 20px;
+    padding: .9em 2.5em;
+  }
+}

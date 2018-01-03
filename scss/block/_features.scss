@@ -1,0 +1,43 @@
+.l-features {
+  background:transparent url('../img/bg_features.jpg') center top no-repeat;
+  background-size: cover;
+}
+.features {
+  @include row-flex();
+  @include wrapper();
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 62px 0;
+
+  &__list {
+    @include row-flex();
+    @include wrapper();
+    justify-content: space-around;
+    padding-bottom: 4rem;
+    list-style-type: none;
+  }
+
+  &__title {
+    padding-bottom: 1em;
+    font-family: PF Square Sans Pro;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 900;
+    color: $color-accent;
+  }
+  &__item {
+    @include size(2);
+    text-align: center;
+
+  }
+  &__icon {
+    @include pulse-shrink();
+  }
+  &__text {
+    font-family: PF Square Sans Pro;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}

@@ -1,10 +1,9 @@
-- isFooter = true
-
 footer.l-footer
-  include promo.pug
+  if isFooterWithPromo
+    include promo.pug
   .footer
     .footer__topline
-      img(class="footer__logo", src="img/logo@2x.png", srcset="img/logo@2x.png 2x, img/logo@3x.png 3x", alt="Школа танцев", title="Школа танцев")
+      img(class="footer__logo", src="/img/logo@2x.png", srcset="/img/logo@2x.png 2x, /img/logo@3x.png 3x", alt="Школа танцев", title="Школа танцев")
       include social.pug
     hr.line.hide-mobile
     include mainmenu.pug
@@ -12,4 +11,4 @@ footer.l-footer
     .footer__bottomline
       span.copyright Все права защищены (с) 2017 PoleDeluxe.by
       a.brandlab(href="https://brandlab.by")
-        img.brandlab__img(src="img/logo-brandlab.svg", alt="BrandLab")
+        img.brandlab__img(src="/img/logo-brandlab.svg", alt="BrandLab")

@@ -2,12 +2,12 @@
 .l-header
   header.header
     a(href="/" class="logo")
-      img(class="logo__img" src="img/logo.png"
-      srcset="img/logo@2x.png 2x, img/logo@3x.png 3x"
+      img(class="logo__img" src="/img/logo.png"
+      srcset="/img/logo@2x.png 2x, /img/logo@3x.png 3x"
       alt="Школа танцев" title="Школа танцев")
     div.infolist
       .infoblock
-        img.infoblock__img(src="img/placeholder.svg", alt="Адрес")
+        img.infoblock__img(src="/img/placeholder.svg", alt="Адрес")
         .infoblock__text
           header.infoblock__title Адреса:
           p.infoblock__desc
@@ -15,24 +15,30 @@
               ул. Ленина, д.52/13, 2 этаж
             br
             .
-              ТЦ"Континент", 2 этаж
+              ТЦ "Континент", 2 этаж
       .infoblock
-        img.infoblock__img(src="img/telephone.svg", alt="Телефон")
+        img.infoblock__img(src="/img/telephone.svg", alt="Телефон")
         .infoblock__text
           header.infoblock__title Телефон:
           p.infoblock__desc +375 29 539-39-36
       .infoblock
-        img.infoblock__img(src="img/dashboard.svg", alt="Время работы")
+        img.infoblock__img(src="/img/dashboard.svg", alt="Время работы")
         .infoblock__text
           header.infoblock__title Время работы:
-          p.infoblock__desc с 9:00 до 22:00
-    button.btn_mobilemenu
-      img(src="img/mobile-menu-button.svg", alt="Разделы сайта")
+          p.infoblock__desc с 8:00 до 22:00
     hr.header__line
   nav.navbar
     include mainmenu.pug
     include social.pug
   button.raspisanie-btn
     .raspisanie-btn__icon
-      img(src="img/dashboard.svg", alt="Расписание")
-    span.raspisanie-btn__text Расписание на сегодня
+      img(src="/img/dashboard.svg", alt="Расписание")
+    span.raspisanie-btn__text Расписание на завтра
+  button(class="hamburger hamburger--arrow-r" type="button")
+    span.hamburger-box
+      span.hamburger-inner
+  include mobilemenu.pug
+  button.raspisanie-btn_md
+    span.raspisanie-btn__icon_md
+      img(src="/img/dashboard_white.svg", alt="Расписание")
+    span.raspisanie-btn__text_md Расписание на завтра

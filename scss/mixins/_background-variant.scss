@@ -10,3 +10,34 @@
     background-color: darken($color, 10%);
   }
 }
+
+@mixin bg-retina($url, $ext: png, $dpr: 1) {
+	background-image: url('#{$url}.#{$ext}');
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position-x: center;
+	@if $dpr>1 {
+		/* dpr 2 */
+		@media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) { 
+		
+			background-image: url('#{$url}@2x.#{$ext}');
+		}
+	}
+	@if $dpr>2 {
+		/* dpr 3 */
+		@media only screen and (-webkit-min-device-pixel-ratio: 3) and (min-width: 768px),
+			only screen and (min--moz-device-pixel-ratio: 3) and (min-width: 768px),
+			only screen and (-o-min-device-pixel-ratio: 3/1) and (min-width: 768px),
+			only screen and (min-device-pixel-ratio: 3) and (min-width: 768px),
+			only screen and (min-resolution: 3dppx){
+			
+			background-image: url('#{$url}@3x.#{$ext}');
+		}
+  	}
+}

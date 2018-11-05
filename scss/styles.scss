@@ -2,6 +2,7 @@
 @import "vendor/normalize";
 @import "vendor/smart-grid";
 @import "vendor/hover-css/polehover";
+@import "vendor/hamburgers/hamburgers";
 @import "variables";
 @import "mixins";
 *, *:before, *:after {
@@ -17,21 +18,50 @@ html{
 }
 body{
   font-family: $font-family-base;
-  min-height: 100vw;
+  min-height: 100vh;
   color: $color-light;
   background-color: $color-dark;
 }
+option, select {
+   outline: none;
+   border: none;
+}
+select:-moz-focusing {
+  color: transparent;
+   text-shadow: 0 0 0 #000;
+}
 .page {
   background-color: $color-dark;
+}
+.section {
+  @include wrapper();
+  &__title {
+    padding-bottom: 1em;
+    font-family: Roboto Condensed;
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $color-light;
+  }
+  &__desc {
+    font-family: Roboto;
+    font-size: 16px;
+    color: $color-light;
+  }
 }
 // Buttons
 
 .btn {
   padding: .9em 1em;
+  display: inline-block;
+  min-width: 250px;
+  max-width: 100%;
   text-transform: uppercase;
   font-family: Roboto Condensed;
   font-size: 18px;
   font-weight: bold;
+  text-decoration: none;
   text-align: center;
   color: $color-text-dark;
   border: none;
@@ -39,31 +69,17 @@ body{
   border-radius: 100px;
   background-image: linear-gradient(to bottom, #fcfa89, #faa72b);
   transition: all 0.5s ease-out;
-  @include pop();
   &:hover, &:focus {
     background: #fcfa89;
+    cursor: pointer;
   }
   &_tryform {
     margin-top: 23px;
     width: 245px;
   }
-  &_mobilemenu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 69px;
-    height: 69px;
-    background-image: linear-gradient(to bottom, #fcfa89, #faa72b);
-    border: none;
-    outline: none;
-    @include from($sm) {
-      display: none;
-    }
-    img{
-      width: 22px;
-      height: auto;
-    }
-  }
+}
+.link {
+  color: $color-accent;
 }
 .line {
   border-color: $color-accent;
@@ -73,6 +89,9 @@ body{
       border: none;
       border-bottom: 3px solid orange;
       width: 90px;
+    }
+    &_left {
+      display: inline-block;
     }
 }
 //forms
@@ -104,6 +123,7 @@ body{
   background-color: white;
   appearance: none!important;
     -webkit-appearance: none;
+    -moz-appearance: none;
   background-image: url('./../img/select_arrow.svg'),
                     linear-gradient(to bottom, #fcfa89, #faa72b);
   background-size: 25px 25px, 43px 100%;
@@ -126,7 +146,9 @@ body{
 
 //blocks
 @import "block/header";
+@import "block/mmenu";
 @import "block/slider";
+@import "block/carousel";
 @import "block/styles";
 @import "block/aboutus";
 @import "block/news";
@@ -134,3 +156,8 @@ body{
 @import "block/trainers";
 @import "block/promo";
 @import "block/footer";
+@import "block/price";
+@import "block/schedule";
+@import "block/gym";
+@import "block/excerpt";
+@import "bg-images";

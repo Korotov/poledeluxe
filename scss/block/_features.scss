@@ -1,5 +1,9 @@
 .l-features {
-  background:transparent url('../img/bg_features.jpg') center top no-repeat;
+  background:transparent center top no-repeat;
+  background-image: 
+        linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,1) 100%),
+        linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,.1) 50%, rgba(0,0,0,1) 100%),
+        url('../img/bg_features_new.jpg');
   background-size: cover;
 }
 .features {
@@ -19,12 +23,7 @@
   }
 
   &__title {
-    padding-bottom: 1em;
-    font-family: PF Square Sans Pro;
-    font-size: 35px;
-    text-align: center;
-    font-weight: 900;
-    color: $color-accent;
+    @extend .section__title;
   }
   &__item {
     @include size(2);
@@ -33,11 +32,11 @@
   }
   &__icon {
     @include pulse-shrink();
+    margin-bottom: 10px;
   }
   &__text {
-    font-family: PF Square Sans Pro;
     font-size: 14px;
-    font-weight: 900;
+    font-weight: 500;
     text-transform: uppercase;
   }
 }

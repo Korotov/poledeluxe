@@ -8,7 +8,7 @@ const gulpif = require('gulp-if');
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 const ftp = require('vinyl-ftp');
-
+const browser = require('browser-sync').create();
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 //
 
@@ -23,13 +23,19 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('dist/css'));
 });
 gulp.task('pug2html', function() {
-  return gulp.src('./pug/*.pug')
+  return gulp.src(['./pug/*.pug', './pug/trainers/*.pug', './pug/styles/*.pug'],{ base: 'pug' })
     .pipe(pug())
     .pipe(gulp.dest('dist'));
 });
 gulp.task('clean',function() {
     return del('dist');
 });
+
+//TODO webpack intagration
+gulp.task('js', function(){
+    gulp.src('js/*.js')
+    .pipe(gulp.dest('dist/js'))
+})
 gulp.task('assets',function() {
     gulp.src('fonts/**')
       .pipe(gulp.dest('dist/fonts/'));
@@ -43,7 +49,15 @@ gulp.task('watch', function() {
     gulp.watch('./scss/**/*.scss', gulp.series('styles'));
     gulp.watch('./img/**', gulp.series('assets'));
 });
-gulp.task('dev', gulp.series('build', 'watch'));
+//Browser server
+gulp.task('serve',function(){
+  browser.init({
+    server: 'dist'
+  })
+  browser.watch('dist/**/*.*').on('change', browser.reload);
+})
+
+gulp.task('dev', gulp.series('build', gulp.parallel('watch','serve')));
 
 gulp.task( 'deploy', function () {
 

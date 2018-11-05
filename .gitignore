@@ -1,5 +1,11 @@
 *~
 dist/
 node_modules/
+tmp/
 npm-debug.log
 package-lock.json
+.gitignore.save
+.vscode/
+My Project-e25ba9e481f0.json
+__pycache__/
+backend/

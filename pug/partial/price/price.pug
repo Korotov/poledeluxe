@@ -1,0 +1,38 @@
+section.l-price
+  .price
+    hr(class="line line_short")
+    h2.price__title Наши цены
+    p.price__desc  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consequuntur distinctio iste at officia, recusandae dolorem dignissimos laborum maiores expedita. Iure sed inventore ipsam, aliquid, quasi eos amet omnis quas nesciunt incidunt magni voluptatibus veritatis dolore autem, culpa natus excepturi consequatur eligendi iste sunt mollitia perspiciatis numquam ea libero.
+    ul.price-table
+        li.price-item.price-item_head
+            ul.price-item__row.price-item__row_head
+                li.price-item__col.price-item__col_title
+                li.price-item__col
+                    span.price-item__col-title  
+                        strong 4
+                        br
+                        |  занятия
+                    span.price-item__col-subtitle 1 раз в неделю
+                li.price-item__col
+                    span.price-item__col-title 
+                        strong 8
+                        br 
+                        |  занятий
+                    span.price-item__col-subtitle 2 раза в неделю
+                li.price-item__col
+                    span.price-item__col-title 
+                        strong 12 
+                        br
+                        |  занятий
+                    span.price-item__col-subtitle 3 раза в неделю
+                li.price-item__col
+                    span.price-item__col-title 
+                        strong 16 
+                        br
+                        |  занятий
+                    span.price-item__col-subtitle 4 раза в неделю
+                li.price-item__col.price-item__col_btn
+        each style in styles
+            li.price-item
+                +priceItem(style)
+

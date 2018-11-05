@@ -1,0 +1,28 @@
+- var isFooterWithPromo = false;
+include ./../data/trainers.pug
+- var trainer = trainers[1];
+include ./../mixin/mixins.pug
+doctype html
+html(lang = "ru")
+  include ./../partial/head.pug
+  body.page
+    .wrapper
+        include ./../partial/header.pug
+        if trainer.nameWbr
+            +page-header(trainer.nameWbr, trainer.bgClass, trainer.position)
+        else
+            +page-header(trainer.name, trainer.bgClass, trainer.position)
+        section.l-trainer  
+            .trainers-preview
+                +trainer(trainer, true)
+                +resp-carousel()
+                    figure.gallery__item
+                        +resp-img('/trainers/kapiton_g1.jpg', 'gallery__img', trainer.name)
+                    figure.gallery__item
+                        +resp-img('/trainers/kapiton_g2.jpg', 'gallery__img', trainer.name)
+                    figure.gallery__item
+                        +resp-img('/trainers/kapiton_g3.jpg', 'gallery__img', trainer.name)
+
+        include ./../partial/features.pug
+        include ./../partial/aboutus.pug
+        include ./../partial/footer.pug

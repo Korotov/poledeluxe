@@ -1,0 +1,10 @@
+section.l-price
+  .price
+    hr(class="line line_short")
+    h2.price__title Наши направления
+    ul.price-table
+        each style in styles
+            if style.title
+                li.price-item
+                    +styleItem(style)
+

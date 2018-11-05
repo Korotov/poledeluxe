@@ -1,0 +1,8 @@
+section.l-price
+  .price
+    hr(class="line line_short")
+    h2.price__title Цирковая студия "Амадина"
+    ul.price-table
+        each style in kidStyles
+            li.price-item
+                +styleItem(style)

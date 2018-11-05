@@ -1,0 +1,48 @@
+  $easing: cubic-bezier(.6, .05, .28, .91);
+  .hamburger {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    right: 0;
+    transition: right 500ms $easing;
+    background-image: linear-gradient(to bottom, #fcfa89, #faa72b);
+     @include from($sm) {
+        display: none;
+    }
+    &.is-active {
+      right: 223px;
+    }
+  }
+  .mobilemenu {
+    position: fixed;
+    z-index: 4;
+    overflow: auto;
+    top: 0px;
+    right: -265px;
+    width: 275px;
+    opacity: 0;
+    margin: 0;
+    list-style: none;
+    padding: 3em 2em;
+    height: 100%;
+    background-color: #121317;
+    color: $color-text-light;
+    transition: all 350ms $easing;
+    &.is-active{
+      right: 0;
+      opacity: 1;
+      box-shadow: -4px 0 12px -1px rgba(173, 140, 84, 0.87);
+    }
+    &__link {
+      color: $color-text-light;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      padding: .3em .2em;
+      display: block;
+      &:hover, &:focus {
+        background-color: transparentize($color-text-light, .4);
+      }
+
+    }
+  }

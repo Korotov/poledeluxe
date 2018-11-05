@@ -1,0 +1,18 @@
+- var isFooterWithPromo = false
+- var pageName = "Наши<br/>преподаватели"
+include data/trainers.pug
+include mixin/mixins.pug
+doctype html
+html(lang = "ru")
+  include partial/head.pug
+  body.page
+    .wrapper
+      include partial/header.pug
+      +page-header("Наши<br/>преподаватели","bg-trainers")
+      .trainers-preview
+        each el in trainers
+          if el.image
+            +trainer(el)
+      include partial/features.pug
+      include partial/aboutus.pug
+      include partial/footer.pug

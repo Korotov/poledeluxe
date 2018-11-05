@@ -1,0 +1,66 @@
+.excerpt {
+  background: $color-light;
+  @include row-flex();
+  margin-bottom: 1em;
+  @include to($sm) {
+    justify-content: center;
+  }
+  &_full {
+    background-color: transparent;
+    text-shadow: 1px 0px 1px black;
+  }
+  &__img {
+    @include size(5);
+    @include size-sm(12);
+    overflow-y: hidden;
+    padding: 0;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 100vh;
+      object-fit: scale-down;
+    }
+
+  }
+  &__desc-block {
+    @include size(6);
+    @include size-sm(12);
+    padding: 1.5em 1.5em;
+    @include to($sm) {
+      padding: 1.5em 1vw;
+      text-align: center;
+  }
+  }
+  &__title {
+    color: $color-accent;
+    font-size: 48px;
+    font-weight: 500;
+    word-wrap: break-word;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    @include to($sm) {
+      font-size: 8vw;
+  }
+  }
+  &__subtitle {
+    color: $color-accent;
+    font-size: 20px;    
+  }
+  &__description{
+    color: $color-text-dark;
+    font-size: 16px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: 500;
+    @include to($sm) {
+      padding: 1.5em 1vw;
+      text-align: left;
+      font-size: 4vw;
+  }
+    &_full{
+      color: $color-light;
+    }
+  }
+}

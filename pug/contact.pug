@@ -1,0 +1,20 @@
+include data/styles.pug
+include mixin/mixins.pug
+doctype html
+html(lang = "ru")
+  include partial/head.pug
+  body.page
+    .wrapper
+      include partial/header.pug
+      +page-header-compact('Контакты')
+      include partial/gyms.pug
+      section.l-aboutus.l-aboutus_compact
+        .aboutus
+          .slider__desc
+            strong Запись на занятия по телефону
+            br
+            span.slider__phone +375 29 539-39-36
+            br
+            span.slider__text Для всех желающих, кто хочет научиться красиво танцевать, подтянуть фигуру, развить гибкость и пластику тела, научиться выполнять головокружительные трюки.
+      include partial/ymap.pug
+      include partial/footer.pug

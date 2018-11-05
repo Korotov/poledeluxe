@@ -1,0 +1,105 @@
+.l-schedule {
+	background-image: linear-gradient(to top, #d8d8d8, #000000);
+	padding: 20px 0;
+}
+.schedule-filter {
+	@include wrapper();
+}
+.training-location {
+	@include wrapper();
+	&__adress {
+		display: block;
+		font-size: 22px;
+		font-weight: 400;
+	}
+	&__header {
+		cursor: pointer;
+		position: relative;
+		padding: 12px 22px 10px;
+		padding-right: 52px;
+		text-align: center;
+		background-color: $color-text-dark;
+		font-family: Roboto Condensed;
+ 		font-size: 30px;
+ 		@include to($sm) {
+ 			font-size: 5vw;
+ 			text-align: left;
+ 		}
+  		font-weight: bold;
+  		color: $color-accent;
+		transition: .4s; 
+		margin-bottom: 5px;
+		&:hover, &:focus {
+			background-color: lighten($color-text-dark, 7%);
+		}
+
+		&.active { 
+			background-image: linear-gradient(to bottom, #fcfa89, #faa72b);
+			color: $color-text-dark;
+		}
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			right: 15px;
+			top: 0;
+			width: 35px;
+			height: 100%;
+			background: url('../img/icon-gold-up.svg') no-repeat 50% 50%;
+			background-size: contain;
+			transition: all 0.5s 0.2s ease-out;
+			transform: rotate(180deg);
+		}
+		&.active::after {
+			background-image: url('../img/icon-black-down.svg');
+			transition: all 0.5s 0.2s ease-out;
+			transform: rotate(180deg);
+		}
+	}
+}
+.training-location__days {
+	@include row-flex();
+	justify-content: center;
+
+}
+.schedule-day {
+	@include size(3);
+	@include size-md(4);
+	@include size-sm(6);
+	@include size-xs(12);
+	margin: 15px 5px;
+	color: $color-dark;
+	&__header {
+		background-color: $color-text-dark;
+		font-family: Roboto Condensed;
+		font-size: 23px;
+		font-weight: 600;
+		padding: 10px 0;
+		color: $color-accent;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	&__row {
+		padding: 10px 5px;
+		color: $color-text-dark;
+		background-color: $color-light;
+	}
+	&__row.empty {
+		color: $color-text-dark;
+		background-color: white;
+		opacity: .5;
+	}
+	&__time {
+		display: inline-block;
+		font-size: 14px;
+		font-family: Roboto Condensed;
+		font-weight: 600;
+		margin-right: .7em;
+
+	}
+	&__text {
+		font-size: 16px;
+		font-family: Roboto Condensed;
+
+	}
+}

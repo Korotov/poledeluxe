@@ -1,0 +1,15 @@
+- var isFooterWithPromo = true;
+include ./../data/styles.pug
+- var style = styles[4];
+include ./../mixin/mixins.pug
+doctype html
+html(lang = "ru")
+  include ./../partial/head.pug
+  body.page
+    .wrapper
+        include ./../partial/header.pug
+        +page-header(style.title, style.bgClass, style.subtitle)
+        +styleFull(style)
+        include ./../partial/trainers.pug 
+        include ./../partial/features.pug
+        include ./../partial/footer.pug

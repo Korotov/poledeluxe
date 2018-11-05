@@ -1,0 +1,21 @@
+include data/styles.pug
+include mixin/mixins.pug
+doctype html
+html(lang = "ru")
+  include partial/head.pug
+  body.page
+    .wrapper
+      include partial/header.pug
+      .slider.slider_pricepage
+        div.slider__form.slider__form_pricepage
+          span.slider__title.slider__title_pricepage Первое пробное занятие всего за 3 рубля!
+          br
+          button.btn Записаться на пробное занятие
+        div.slider__desc.slider__desc_pricepage
+          strong Запись занятий по телефону
+          br
+          span.slider__phone +375 29 539-39-36
+          br
+          span.slider__text Для всех желающих, кто хочет научиться красиво танцевать, подтянуть фигуру, развить гибкость и пластику тела, научиться выполнять головокружительные трюки.
+      include partial/style-list.pug
+      include partial/footer.pug

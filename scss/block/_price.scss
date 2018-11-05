@@ -1,0 +1,324 @@
+.l-price {
+    background-image: linear-gradient(to top, #d8d8d8, #000000);
+}
+
+.price {
+  @include row-flex();
+  @include wrapper();
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 62px 0 0;
+
+  &__title {
+    padding-bottom: 1em;
+    font-family: Roboto Condensed;
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $color-light;
+  }
+  &__desc {
+    font-family: Roboto;
+    font-size: 16px;
+    color: $color-light;
+  }
+}
+.price-table {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+}
+.price-item {
+    
+    margin-bottom: 4px; 
+    
+    &_head{
+        background-color: transparent;
+
+    }
+    &__row {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        padding: 16px 22px 14px;
+        background-color: $color-text-dark;
+        transition: .4s;
+        &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 0;
+                width: 45px;
+                @include to($md) {
+                    width: 35px;
+                }
+                height: 100%;
+                background: url('../img/icon-gold-up.svg') no-repeat 50% 50%;
+                background-size: contain;
+                transition: all 0.5s 0.2s ease-out;
+                transform: rotate(180deg);
+            }
+        &_head{
+            background-color: transparent;
+            &::after {
+                display: none;
+            }
+            &:hover, &:focus {
+            background-color: none;
+            }
+        }   
+        &:hover, &:focus {
+            background-color: lighten($color-text-dark, 7%);
+        }
+        &.active {
+            background-image: linear-gradient(to bottom, #fcfa89, #faa72b);
+            
+            &.active::after {
+                background-image: url('../img/icon-black-down.svg');
+                transition: all 0.5s 0.2s ease-out;
+                transform: rotate(180deg);
+            }
+        }
+        }
+    &__col {
+        flex: 2;
+        font-family: Roboto Condensed, sans-serif;
+        &_title {
+            flex: 3;
+        }
+        &_btn{
+            flex: 1;
+            position: relative;
+        }
+        h3{
+            padding: 0;
+            margin: 0;
+            font-size: 31px;
+            @include to($md) {
+              font-size: 4vw;
+            }
+            font-weight: 500;
+            font-family: Roboto Condensed, sans-serif;
+            color: $color-accent;
+        }
+        &_secline {
+            font-size: 18px;
+            @include to($md) {
+              font-size: 2.5vw;
+        }
+            font-family: Roboto Condensed, sans-serif;
+            color: $color-accent;
+        }
+        .active & h3, .active &, .active &_secline {
+            color: $color-text-dark;
+        }
+        &_btn {
+            text-align: right;
+        }
+    }
+
+    &__col-title{
+        display: block;
+        font-size: 16px;
+          @include to($md) {
+            font-size: 3.2vw;
+            text-align: center;
+        }
+        font-weight: 600;
+        color: $color-accent;
+        strong {
+            font-size: 26px;
+             @include to($md) {
+                font-size: 7vw;
+        }
+        }
+    }
+    &__col-subtitle {
+        font-size: 13px;
+        @include to($md) {
+            font-size: 3.2vw;
+            text-align: center;
+        }
+    }
+    &__price{
+        font-size: 31px;
+        color: $color-light;
+        @include to($md) {
+            font-size: 4vw;
+        }
+        &::after {
+            content: 'руб.';
+            margin-left: .4em;
+            font-size: 20px;
+            @include to($md) {
+                font-size: 3vw;
+        }
+        }
+        &:empty::after{
+            content: '-';
+            font-size: 31px;
+            @include to($md) {
+              font-size: 4vw;
+        }
+        }
+    }
+    .active &__price {
+        color: $color-text-dark;
+    }
+}
+
+.style-preview {
+    overflow: hidden;
+    display: flex;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    background-color: $color-light;
+    color: $color-text-dark;
+    include to($sm){
+            flex-direction: column;
+            max-width: 100%;
+        }
+    &__img {
+        flex:5;
+        include to($sm){
+            flex: 1;
+            max-width: 100%;
+            margin: 2vw;
+            &>img {
+                width: 100%;
+            }
+        }
+    }
+    &__desc {
+        flex:7;
+        padding: 1em;
+        font-weight:400;
+        line-height: 1.4;
+        include to($sm){
+            flex: 1;
+            width: 100%;
+            padding: 2vw;
+        }
+        &>.btn{
+            margin: .7em auto;
+        }
+    }
+
+}
+.style-full {
+    overflow: hidden;
+    display: flex;
+    background-color: $color-light;
+    color: $color-text-dark;
+    &__img {
+        flex:5;
+    }
+    &__desc {
+        flex:7;
+        padding: 1em;
+        font-weight:400;
+        line-height: 1.4;
+        &>.btn{
+            margin: .7em auto;
+        }
+    }
+
+}
+
+.l-promo-list {
+    background: #000;
+    padding: 60px 0;
+}
+.promo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+}
+.promo-item {
+    @include row-flex();
+    position: relative;
+    background-color: $color-text-dark;
+    margin-bottom: 1em;
+    &__image {
+        @include size(5);
+        position: relative;
+    }
+    &__desc {
+        @include size(7);
+        padding-left: 100px;
+    }
+    &__text {
+      font-family: Roboto Condensed;
+      font-size: 35px;
+      font-weight: bold;
+      &_accent {
+        font-family: Roboto Condensed;
+        font-size: 36px;
+        line-height: 1;
+        font-weight: bold;
+        color: $color-accent;
+        text-transform: uppercase;
+      }
+      &_accent-small {
+        color: $color-accent;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+      &_accent-noup {
+        margin-top: 0;
+        font-size: 36px;
+        line-height: 1;
+        font-weight: bold;
+        color: $color-accent;
+      }
+    }
+
+
+
+    &__label {
+        position: absolute;
+        bottom: 25px;
+        right: -50px;
+        background-color: $color-accent;
+        min-width: 235px;
+        padding: 30px;
+    }
+    &__label-text {
+        font-size: 96px;
+        font-weight: 800;
+        color: $color-dark;
+        line-height: 0.7;
+        letter-spacing: -6px;
+        sup {
+          top: -0.45em;
+          font-size: 65%;
+          margin-left: .1em;
+        }
+        sub {
+          font-size: 35%;
+          letter-spacing: 0;
+          margin-left: .1em;
+          bottom: 0;
+        }
+        &_line2 {
+          display: block;
+          font-family: Roboto Condensed;
+          font-size: 35px;
+          font-weight: normal;
+          text-align: center;
+          color: $color-dark;
+        }
+    }
+
+}

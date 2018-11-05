@@ -1,0 +1,54 @@
+- var isFooterWithPromo = true
+include data/schedule.pug
+include mixin/mixins.pug
+doctype html
+html(lang = "ru")
+  include partial/head.pug
+  body.page
+    .wrapper
+      include partial/header.pug
+      section.l-schedule(id="schedule")
+        .schedule-filter
+          h2.schedule-filter__header Расписание занятий на неделю 
+          select(class="select")
+            option Все залы
+            option зал с пилонами
+            option зал с полотнами
+            option зал в ТЦ "КОНТИНЕНТ"
+          select(class="select" v-model="filterByStyle")
+            option(selected=true) Все направления
+            option(v-for="lesson in lessonList") {{lesson}}
+
+        .training-location
+          header.training-location__header.js-accordion.active Расписание зала Полотна
+            span.training-location__adress ул. Ленина, д.52/13
+          .training-location__days
+            .schedule-day(v-for="day in polotna" v-if="haveLessons(day)")
+              .schedule-day__header {{day.dayOfWeek}}
+              .schedule-day__row(v-for="lesson in day.lessons" v-if="isShowLesson(lesson.name)")
+                span.schedule-day__time {{lesson.time}}
+                span.schedule-day__text {{lesson.name}}
+        
+        .training-location
+          header.training-location__header.js-accordion.active Расписание зала с пилонами
+            span.training-location__adress ул. Ленина, д.52/13
+          .training-location__days
+            .schedule-day(v-for="day in pilony" v-if="haveLessons(day)")
+              .schedule-day__header {{day.dayOfWeek}}
+              .schedule-day__row(v-for="lesson in day.lessons" v-if="isShowLesson(lesson.name)")
+                span.schedule-day__time {{lesson.time}}
+                span.schedule-day__text {{lesson.name}}
+
+        .training-location
+          header.training-location__header.js-accordion.active Расписание зала КОНТИНЕНТ
+            span.training-location__adress пр-т. Строителей д.1
+          .training-location__days
+            .schedule-day(v-for="day in kontinent" v-if="haveLessons(day)")
+              .schedule-day__header {{day.dayOfWeek}}
+              .schedule-day__row(v-for="lesson in day.lessons" v-if="isShowLesson(lesson.name)")
+                span.schedule-day__time {{lesson.time}}
+                span.schedule-day__text {{lesson.name}}
+
+
+      include partial/aboutus.pug
+      include partial/footer.pug

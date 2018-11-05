@@ -1,0 +1,95 @@
+mixin priceItem(styleData)
+    ul.price-item__row.js-accordion
+        li.price-item__col.price-item__col_title
+            h3 #{styleData.title}
+            span.price-item__col_secline #{styleData.subtitle}
+        li.price-item__col
+            span.price-item__price #{styleData.price1}
+        li.price-item__col
+            span.price-item__price #{styleData.price2}
+        li.price-item__col
+            span.price-item__price #{styleData.price3}
+        li.price-item__col
+            span.price-item__price #{styleData.price4}
+        li.price-item__col.price-item__col_btn
+    .style-preview
+        +excerptWithImage(styleData)
+
+mixin styleItem(styleData)
+    ul.price-item__row.js-accordion
+        li.price-item__col.price-item__col_title
+            h3 #{styleData.title}
+            span.price-item__col_secline #{styleData.subtitle}
+    .style-preview
+        +excerptWithImage(styleData)
+
+mixin styleFull(data)
+    .style-full
+        figure.style-preview__img
+            img(src='/img/'+data.imgsrc)
+        .style-preview__desc
+            | !{data.fullDescription}
+
+mixin excerptWithImage(data)
+    .excerpt
+        figure.excerpt__img
+            img(src='/img/'+data.image)
+        .excerpt__desc-block
+            if data.title
+                if data.link
+                    h3
+                        a.excerpt__title(href=data.link) #{data.title}
+                else 
+                    h3.excerpt__title #{data.title}
+            if data.subtitle
+                span.excerpt__subtitle #{data.subtitle}
+            .excerpt__description !{data.description}
+            if data.link
+                br
+                a.btn(href=data.link) Подробнее...
+mixin trainer(data, isFull)
+    if isFull
+        .trainer.trainer_full
+            .trainer__image
+              +resp-img(data.image, 'trainer__respimg', data.name)
+            .trainer__desc-block
+              h3.trainer__name #{data.title}
+              span.trainer__position #{data.subtitle}
+              .trainer__description.trainer__description_full !{data.fullDescription}
+    else
+        +excerptWithImage(data)
+mixin schedule-day(day)
+    .schedule-day
+        .schedule-day__header #{day.dayOfWeek}
+        each row in day.plan
+            if row.text
+                .schedule-day__row
+                    span.schedule-day__time #{row.time}
+                    span.schedule-day__text #{row.text}
+            else
+                .schedule-day__row.empty
+                    span.schedule-day__time #{row.time}
+                    span.schedule-day__text #{row.text}
+mixin page-header(title, bgClass, subtitle)
+    section.l-page-header(class=bgClass)
+        .page-header
+            h1.page-header__title !{title}
+            hr.line_short.line_left
+            if subtitle
+                span.page-header__subtitle #{subtitle}
+mixin page-header-compact(title, bgClass, subtitle)
+    section.l-page-header(class=bgClass)
+        .page-header.page-header_compact
+            h1.page-header__title !{title}
+            hr.line_short.line_left
+            if subtitle
+                span.page-header__subtitle #{subtitle}
+mixin resp-img(name, imgClass, alt)
+    - var fileName = name.slice(0,name.lastIndexOf('.'))
+    - var fileExt = name.slice(name.lastIndexOf('.')) //with '.'
+    img(class=imgClass src="/img/"+name,
+        srcset="/img/" + fileName + "@2x" + fileExt +" 2x, /img/" + fileName + "@3x" + fileExt + " 3x",
+        alt=imgAlt title=imgAlt )
+mixin resp-carousel()
+    .gallery.js-carousel
+        block

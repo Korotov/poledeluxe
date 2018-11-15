@@ -1,6 +1,6 @@
+@import "vendor/smart-grid";
 @import "fonts";
 @import "vendor/normalize";
-@import "vendor/smart-grid";
 @import "vendor/hover-css/polehover";
 @import "vendor/hamburgers/hamburgers";
 @import "variables";
@@ -16,9 +16,10 @@ html,
 html{
   background-color: $color-dark;
 }
-body{
+body{ 
   font-family: $font-family-base;
   min-height: 100vh;
+  width: 100%;
   color: $color-light;
   background-color: $color-dark;
 }
@@ -124,7 +125,7 @@ select:-moz-focusing {
   appearance: none!important;
     -webkit-appearance: none;
     -moz-appearance: none;
-  background-image: url('./../img/select_arrow.svg'),
+  background-image: url('../img/select_arrow.svg'),
                     linear-gradient(to bottom, #fcfa89, #faa72b);
   background-size: 25px 25px, 43px 100%;
   background-position: right 8px center,right center;

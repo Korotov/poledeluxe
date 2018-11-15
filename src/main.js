@@ -1,7 +1,9 @@
 import Siema from 'siema';
-import Accordion from './accordion';
-import MobileMenu from './mobilemenu.js';
-import './schedule';
+import Accordion from './js/accordion';
+import MobileMenu from './js/mobilemenu';
+import './js/schedule';
+import './scss/styles.scss';
+
 
 document.addEventListener("DOMContentLoaded", function(){
   new MobileMenu().activate();
@@ -25,13 +27,9 @@ document.addEventListener("DOMContentLoaded", function(){
     onChange: () => {},
   });
 };
-});
-document.addEventListener("DOMContentLoaded", function(){
-  new Accordion({
-    buttonSelector: '.price-item__row.js-accordion',
-    panelSelector: '.style-preview',
-    visibleDisplay: 'flex',
-    });
-  
-
+new Accordion({
+  buttonSelector: '.price-item__row.js-accordion',
+  panelSelector: '.style-preview',
+  visibleDisplay: 'flex',
+  });
 });

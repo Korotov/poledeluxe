@@ -26,14 +26,14 @@ mixin styleItem(styleData)
 mixin styleFull(data)
     .style-full
         figure.style-preview__img
-            img(src='/img/'+data.imgsrc)
+            img(src=data.imgsrc)
         .style-preview__desc
             | !{data.fullDescription}
 
 mixin excerptWithImage(data)
     .excerpt
         figure.excerpt__img
-            img(src='/img/'+data.image)
+            img(src=data.image)
         .excerpt__desc-block
             if data.title
                 if data.link
@@ -87,9 +87,10 @@ mixin page-header-compact(title, bgClass, subtitle)
 mixin resp-img(name, imgClass, alt)
     - var fileName = name.slice(0,name.lastIndexOf('.'))
     - var fileExt = name.slice(name.lastIndexOf('.')) //with '.'
-    img(class=imgClass src="/img/"+name,
-        srcset="/img/" + fileName + "@2x" + fileExt +" 2x, /img/" + fileName + "@3x" + fileExt + " 3x",
-        alt=imgAlt title=imgAlt )
+    //- img(class=imgClass src="/img/"+name,
+    //-     srcset="/img/" + fileName + "@2x" + fileExt +" 2x, /img/" + fileName + "@3x" + fileExt + " 3x",
+    //-     alt=imgAlt title=imgAlt )
+    img(class=imgClass src=name alt=alt)
 mixin resp-carousel()
     .gallery.js-carousel
         block

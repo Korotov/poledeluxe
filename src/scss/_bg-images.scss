@@ -1,47 +1,47 @@
 .bg-promo2 {
-	@include bg-retina('/img/promo/promo2', jpg, 3); 
+	@include bg-retina('../img/promo/promo2', jpg, 3); 
 }
 .bg-promo3 {
-	@include bg-retina('/img/promo/promo3', jpg, 3); 
+	@include bg-retina('../img/promo/promo3', jpg, 3); 
 }
 .bg-promo4 {
-	@include bg-retina('/img/promo/promo4', jpg, 3); 
+	@include bg-retina('../img/promo/promo4', jpg, 3); 
 }
 .bg-promo5 {
-	@include bg-retina('/img/promo/promo5', jpg, 3);
+	@include bg-retina('../img/promo/promo5', jpg, 3);
 }
 .bg-trainers {
-	@include bg-retina('/img/bg_trainers', jpg, 3);
+	@include bg-retina('../img/bg_trainers', jpg, 3);
 	background-position: left top;
 	max-height: 475px;
 }
 .bg-puteeva {
-	@include bg-retina('/img/trainers/puteeva_wide', jpg, 3);
+	@include bg-retina('../img/trainers/puteeva_wide', jpg, 3);
 	text-shadow: 0 2px 4px #000000;
 	max-height: 475px;
 }
 .bg-lysova {
-	@include bg-retina('/img/trainers/lysova_wide', jpg, 3);
+	@include bg-retina('../img/trainers/lysova_wide', jpg, 3);
 	text-shadow: 0 2px 4px #000000;
 	max-height: 475px;
 }
 .bg-kolbun {
-	@include bg-retina('/img/trainers/kolbun_wide', jpg, 3);
+	@include bg-retina('../img/trainers/kolbun_wide', jpg, 3);
 	text-shadow: 0 2px 4px #000000;
 	max-height: 475px;
 }
 .bg-makarova {
-    @include bg-retina('/img/trainers/makarova_wide', jpg, 3);
+    @include bg-retina('../img/trainers/makarova_wide', jpg, 3);
     text-shadow: 0 2px 4px #000000;
     max-height: 475px;
 }
 .bg-drozdova {
-    @include bg-retina('/img/trainers/drozdova_wide', jpg, 3);
+    @include bg-retina('../img/trainers/drozdova_wide', jpg, 3);
     text-shadow: 0 2px 4px #000000;
     max-height: 475px;
 }
 .bg-marianna {
-    @include bg-retina('/img/trainers/marianna_wide', jpg, 3);
+    @include bg-retina('../img/trainers/marianna_wide', jpg, 3);
     text-shadow: 0 2px 4px #000000;
     max-height: 475px;
 }
@@ -63,7 +63,7 @@
     max-height: 475px;
 }
 .bg-booty {
-    @include bg-retina('/img/styles/booty_wide', jpg, 3);
+    @include bg-retina('../img/trainers/marianna_wide', jpg, 3);
     text-shadow: 0 2px 4px #000000;
     max-height: 475px;
 }

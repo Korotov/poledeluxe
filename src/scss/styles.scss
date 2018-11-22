@@ -22,6 +22,8 @@ body{
   width: 100%;
   color: $color-light;
   background-color: $color-dark;
+  line-height: 1.5;
+  font-weight: 300;
 }
 option, select {
    outline: none;

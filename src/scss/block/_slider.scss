@@ -56,7 +56,12 @@
     line-height: 1.08;
     text-align: left;
     @include to($sm) {
-      font-size: 6vw;
+      font-size: 7vw;
+      text-align: center;
+      padding: .2em 0;
+      line-height: 1.5;
+      margin: 0;
+      display: block;
     }
     &_pricepage {
       font-size: 31px;
@@ -87,9 +92,11 @@
   }
   &__text {
     font-size: 16px;
-    text-align: left;
+    letter-spacing: 1px;
+    text-align: center;
     @include to($sm) {
-      font-size: 14px;
+      font-size: 16px;
+      text-align: justify;
     }
   }
 }
@@ -97,4 +104,10 @@
   background-color: $color-text-dark;
   padding: 40px 28px;
   margin-top: 44px;
+  @include to($sm){
+    padding: 35px 38px;
+    text-align: center;
+    margin-top: 22px;
+    margin-bottom: 20px;
+  }
 }

@@ -28,6 +28,10 @@
   text-decoration: none;
   font-weight: 500;
   color: $color-light;
+  @include to($sm){
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
   }
   &__btn {
     @extend .btn;

@@ -17,6 +17,9 @@
     @include wrapper();
     justify-content: space-around;
     padding-bottom: 4rem;
+    @include to($sm) {
+      padding: 10px;
+    }
   }
   &__title {
   padding-bottom: 1em;
@@ -50,6 +53,7 @@
     margin: 0;
     max-width: 100%;
     overflow: hidden;
+    margin-bottom: -3px;
     img{
       transition: all 1s cubic-bezier(.46,.03,.52,.96);
       transition-property: all;

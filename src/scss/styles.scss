@@ -72,6 +72,14 @@ select:-moz-focusing {
   border-radius: 100px;
   background-image: linear-gradient(to bottom, #fcfa89, #faa72b);
   transition: all 0.5s ease-out;
+  @include to($sm) {
+    max-width: 80vw;
+    padding: .5em 10px;
+    border-radius: 20px;
+    min-height: 60px;
+    letter-spacing: 1px;
+
+  }
   &:hover, &:focus {
     background: #fcfa89;
     cursor: pointer;
@@ -99,6 +107,11 @@ select:-moz-focusing {
 }
 //forms
 .textfield {
+  @include to($sm) {
+    width: 80vw;
+    line-height: 2;
+    margin-bottom: 18px;
+  }
   box-sizing: border-box;
   width: 245px;
   padding: 6px 8px 5px 8px;
@@ -134,6 +147,12 @@ select:-moz-focusing {
   background-repeat: no-repeat;
   margin-bottom: 10px;
   transition: all 0.5s ease-out;
+  @include to($sm) {
+    width: 80vw;
+    margin-bottom: 18px;
+    line-height: 2;
+    background-size: 32px 32px, 50px 97%;
+  }
 }
 //helpers
 .hide-mobile {

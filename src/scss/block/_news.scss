@@ -12,15 +12,29 @@
   flex-direction: column;
   align-items: center;
   padding: 62px 0 0;
+  @include to($sm) {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
 
   &__list {
     @include row-flex();
     @include wrapper();
     justify-content: space-between;
     padding-bottom: 4rem;
+    @include to($sm) {
+      padding-left: 2vw;
+      padding-right: 2vw;
+    }
   }
 
   &__title {
+    @include to($sm) {
+      padding-left: 2vw;
+      padding-right: 2vw;
+      font-size: 30px;
+      padding-bottom: 0;
+    }
     padding-bottom: 1em;
     font-family: Roboto Condensed;
     font-size: 36px;
@@ -34,6 +48,9 @@
   @include size(4);
   @include size-md(6);
   @include size-sm(12);
+  @include to($sm) {
+    width: 95vw;
+  }
   display: flex;
   flex-direction: column;
   font-family: Roboto Condensed;
@@ -52,6 +69,7 @@
     overflow: hidden;
     object-fit: cover;
     img{
+      width:100%;
       transition: all 1s cubic-bezier(.46,.03,.52,.96);
       transition-property: all;
       transition-duration: 1s;
@@ -71,15 +89,18 @@
   &__title {
     margin: 0;
     flex: 25px;
+    text-align: center;
     margin: .8em 0;
-    font-weight: 600;
-    font-size: 26px;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 1px;
   }
   &__desc {
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: left;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: justify;
+    letter-spacing: 1px;
     line-height: 1.5;
     margin: 0;
   }

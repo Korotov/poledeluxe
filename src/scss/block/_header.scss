@@ -4,7 +4,11 @@
   background-size: auto 100%;
   @include to($md){
     background-size: cover;
-      }
+  }
+  @include to($sm) {
+    text-align: center;
+  }
+    
 }
 .header {
   @include row-flex();
@@ -18,9 +22,6 @@
       }
   &__line {
     @extend .line;
-    @include to($sm) {
-      margin-right: 81px;
-    }
   }
 }
 .logo {
@@ -31,7 +32,7 @@
   }
     &__img {
       @include to($sm){
-        width: 201px;
+        width: 260px;
 
       }
     }
@@ -187,8 +188,8 @@
   padding-bottom: .4em;
   font-family: Roboto;
   font-size: 18px;
-  font-weight: bold;
-  text-align: left;
+  font-weight: 400;
+  text-align: center;
   color: $color-light;;
   @include underline-from-center();
   @include from($sm) {

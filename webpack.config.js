@@ -72,7 +72,7 @@ module.exports = (env, options) => {
         {
           test: /\.(sa|sc|c)ss$/,
           use: [
-            isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+            MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
@@ -90,7 +90,7 @@ module.exports = (env, options) => {
         },
 
         {
-          test: /\.woff2?$|\.ttf$|\.eot$/,
+          test: /\.woff2?$|\.ttf$|\.eot$|\.otf$/,
           use: [{
             loader: "file-loader",
             options: {

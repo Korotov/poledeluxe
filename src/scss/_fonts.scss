@@ -2,8 +2,20 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 @font-face {
-font-family: "PF Square Sans Pro";
-src: url("../fonts/PFSquareSansProExtraBlack.ttf") format("truetype");
-font-style: normal;
-font-weight: normal;
+    font-family: "Helvetica Neue";
+    src: url('../fonts/HelveticaNeueCyr-Roman.otf') format("OpenType");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url('../fonts/HelveticaNeueCyr-Light.otf') format("OpenType");
+    font-style: normal;
+    font-weight: lighter;
+}
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url('../fonts/HelveticaNeueCyr-Thin.otf') format("OpenType");
+    font-style: normal;
+    font-weight: 200;
 }

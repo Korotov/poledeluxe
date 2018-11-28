@@ -28,8 +28,11 @@
     @include size-sm(12);
     padding: 1.5em 1.5em;
     @include to($sm) {
-      padding: 1.5em 1vw;
+      padding: 0 1vw;
       text-align: center;
+  }
+  h3 {
+    margin: 0;
   }
   }
   &__title {
@@ -42,6 +45,7 @@
     padding: 0;
     @include to($sm) {
       font-size: 8vw;
+    
   }
   }
   &__subtitle {
@@ -56,8 +60,11 @@
     font-weight: 500;
     @include to($sm) {
       padding: 1.5em 1vw;
-      text-align: left;
-      font-size: 4vw;
+      text-align: justify;
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin:0;
+      padding: 0 5px;
   }
     &_full{
       color: $color-light;

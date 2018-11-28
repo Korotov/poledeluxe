@@ -20,10 +20,11 @@
     top: 0px;
     right: -265px;
     width: 275px;
+    text-align: left;
     opacity: 0;
     margin: 0;
     list-style: none;
-    padding: 3em 2em;
+    padding: 60px 10px 20px;
     height: 100%;
     background-color: #121317;
     color: $color-text-light;
@@ -31,15 +32,19 @@
     &.is-active{
       right: 0;
       opacity: 1;
-      box-shadow: -4px 0 12px -1px rgba(173, 140, 84, 0.87);
+      box-shadow: -2px 0 1px -1px rgba(134, 134, 134, 0.87);
     }
     &__link {
       color: $color-text-light;
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 1.3rem;
+      font-size: 15px;
+      letter-spacing: 1px;
+      font-weight: 400; 
+      line-height: 1.7;
       padding: .3em .2em;
       display: block;
+      border-bottom: 1px solid #232323;
       &:hover, &:focus {
         background-color: transparentize($color-text-light, .4);
       }

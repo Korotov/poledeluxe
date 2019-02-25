@@ -167,6 +167,7 @@ select:-moz-focusing {
 }
 
 //blocks
+@import "block/notification";
 @import "block/header";
 @import "block/mmenu";
 @import "block/slider";

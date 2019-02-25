@@ -1,10 +1,12 @@
 .f-try
   form
     input.textfield(type="text", name="try_name" placeholder="Ваше имя")
+    input(type="hidden", name="lead_from", value="Пробное занятие")
     select.select
       option(disabled, selected) Направление
-      option Exotic PoleDance
-      option Crossfit
+      option(value="Exotic PoleDance") Exotic PoleDance
+      option(value="PoleDance") PoleDance
+      option(value="Stretching") Stretching
       option Zumba Deluxe
-    input.textfield(type="phone", name="try_phone", placeholder="+375")
+    input.textfield(type="phone", name="phone", placeholder="+375")
     button(type="submit", class="btn") Записаться на пробное занятие

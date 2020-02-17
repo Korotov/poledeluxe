@@ -7,7 +7,7 @@ const SHEETURL = "https://sheets.googleapis.com/v4/spreadsheets/1rMBMYT168iMQVzs
     +"ranges='polotna'!B3%3AD17&ranges='polotna'!E3%3AG17&ranges='polotna'!H3%3AJ17&ranges='polotna'!K3%3AM17&ranges='polotna'!N3%3AP17&ranges='polotna'!Q3%3AS17&ranges='polotna'!T3%3AV17&"
     + "ranges='pilony'!B3%3AD17&ranges='pilony'!E3%3AG17&ranges='pilony'!H3%3AJ17&ranges='pilony'!K3%3AM17&ranges='pilony'!N3%3AP17&ranges='pilony'!Q3%3AS17&ranges='pilony'!T3%3AV17&"
     +"ranges='kontinent'!B3%3AD17&ranges='kontinent'!E3%3AG17&ranges='kontinent'!H3%3AJ17&ranges='kontinent'!K3%3AM17&ranges='kontinent'!N3%3AP17&ranges='kontinent'!Q3%3AS17&ranges='kontinent'!T3%3AV17"
-    + "&ranges='styles'!A1%3AA25"
+    + "&ranges='styles'!A1%3AA50"
     +"&key="+SHEETPARAMS.apikey;
 function encodeQueryData(data) {
    let ret = [];
@@ -28,16 +28,16 @@ document.addEventListener("DOMContentLoaded", function(){
     },
     methods: {
       isShowLesson: function(lesson){
-        let byStyle = this.filterByStyle;
-        if (!byStyle || byStyle === 'Все направления') {
-          return true;
-        }
-        if ( lesson === byStyle ) return true;
-        else return false;
+        
+        let filter = this.filterByStyle === 'Все направления'
+                     || this.filterByStyle === lesson.name;
+        let name = lesson.name.trim();
+        return filter && name && lesson.status;
+        
       },
       haveLessons: function(day){
         let byStyle = this.filterByStyle;
-        let lessons = day.lessos;
+        let lessons = day.lessons;
         if ( (!byStyle || byStyle === 'Все направления') && day.lessons.length>=1) return true;
         for ( let lesson of day.lessons ) {
           if (lesson.name === byStyle) return true;
@@ -114,7 +114,7 @@ function getDayFromSheet (data) {
   for (let el of data) {
     if (el.length>=2) {
       let lesson = {time:el[0], name:el[1], status: true};
-      if (lesson.time.length<=2) {
+      if (lesson.time.trim().length<=2) {
         lesson.time+=':00';
       }
       if (el[2]) {

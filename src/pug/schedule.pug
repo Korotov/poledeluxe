@@ -1,5 +1,5 @@
-- var isFooterWithPromo = true
-include data/schedule.pug
+- var isFooterWithPromo = false
+//- include data/schedule.pug
 include mixin/mixins.pug
 doctype html
 html(lang = "ru")
@@ -10,7 +10,7 @@ html(lang = "ru")
       section.l-schedule(id="schedule")
         .schedule-filter
           h2.schedule-filter__header Расписание занятий на неделю 
-          select(class="select")
+          //- select(class="select")
             option Все залы
             option зал с пилонами
             option зал с полотнами
@@ -25,7 +25,7 @@ html(lang = "ru")
           .training-location__days
             .schedule-day(v-for="day in polotna" v-if="haveLessons(day)")
               .schedule-day__header {{day.dayOfWeek}}
-              .schedule-day__row(v-for="lesson in day.lessons" v-if="isShowLesson(lesson.name)")
+              .schedule-day__row(v-for="lesson in day.lessons" v-if="isShowLesson(lesson)")
                 span.schedule-day__time {{lesson.time}}
                 span.schedule-day__text {{lesson.name}}
         
@@ -35,7 +35,7 @@ html(lang = "ru")
           .training-location__days
             .schedule-day(v-for="day in pilony" v-if="haveLessons(day)")
               .schedule-day__header {{day.dayOfWeek}}
-              .schedule-day__row(v-for="lesson in day.lessons" v-if="isShowLesson(lesson.name)")
+              .schedule-day__row(v-for="lesson in day.lessons" v-if="isShowLesson(lesson)")
                 span.schedule-day__time {{lesson.time}}
                 span.schedule-day__text {{lesson.name}}
 
@@ -45,7 +45,7 @@ html(lang = "ru")
           .training-location__days
             .schedule-day(v-for="day in kontinent" v-if="haveLessons(day)")
               .schedule-day__header {{day.dayOfWeek}}
-              .schedule-day__row(v-for="lesson in day.lessons" v-if="isShowLesson(lesson.name)")
+              .schedule-day__row(v-for="lesson in day.lessons" v-if="isShowLesson(lesson)")
                 span.schedule-day__time {{lesson.time}}
                 span.schedule-day__text {{lesson.name}}
 
